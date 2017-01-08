@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>center med id</title>
+    <style>
+
+        html {
+            background: #333;
+        }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.module {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    margin: 10px 10px 10px 10px;
+    border: solid 1px;
+    }
+
+
+.moduleadp {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 900px;
+    margin: 10px 10px 10px 10px;
+    border: solid 1px;
+}
+
+/* det er denne som bestemmer at moduleadp bliver lille når browseren kommer under 1000px */
+@media screen and (max-width: 1000px) {
+    .moduleadp {
+        width: 300px;
+    }
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+<body>
+<div class="container">
+    <div class="module">
+        <h1>Dette er en reponsive container</h1>
+        <p>Denne container er <span class="element"></span> pixels bred når browseren er <span class="browser"></span> pixels bred. Resize din browser for at se det virke.</p>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="moduleadp">
+        <h1>Dette er en adaptive container</h1>
+        <p>Denne container er 900 pixels bred så længe din browser er over 1000 pixels. Alt under det, og den bliver sat til 300px.</p>
+    </div>
+</div>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>$('.element').html($('.module').width());
+$('.browser').html($(window).width());
+$(window).resize(function () {
+    $('.element').html($('.module').width());
+    $('.browser').html($(window).width());
+});
+//# sourceURL=pen.js
+</script>
+
+</body>
+</html>
